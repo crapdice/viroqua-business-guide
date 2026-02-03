@@ -1,0 +1,482 @@
+[
+  {
+    "id": "27017832-0a9d-47aa-984d-e5c4a6a3c1e2",
+    "name": "Services",
+    "slug": "services",
+    "icon_text": "🛠️",
+    "parent_id": null,
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "79a9626d-6812-4a28-87c3-3f65a9d08ecf",
+    "name": "Eat & Drink",
+    "slug": "eat-and-drink",
+    "icon_text": "🏙️",
+    "parent_id": null,
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "5b1d9adc-8d23-4bd1-8439-e6ce12d9cbfd",
+    "name": "Shopping & Retail",
+    "slug": "shopping-and-retail",
+    "icon_text": "🛍️",
+    "parent_id": null,
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "fb1f5ff2-a615-4162-ae30-5215b8c076b8",
+    "name": "Agriculture & Food Systems",
+    "slug": "agriculture",
+    "icon_text": "🌾",
+    "parent_id": null,
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "2f07e554-b2ba-4c16-942f-be843be7a765",
+    "name": "Civic & Institutional",
+    "slug": "civic",
+    "icon_text": "🏛️",
+    "parent_id": null,
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "7cd04104-0841-406a-9463-8e818bdea291",
+    "name": "Professional Services",
+    "slug": "professional-services",
+    "icon_text": "👔",
+    "parent_id": "27017832-0a9d-47aa-984d-e5c4a6a3c1e2",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "ce48899e-171d-49f4-86f3-29b2eb77866e",
+    "name": "Personal Care & Wellness",
+    "slug": "wellness",
+    "icon_text": "🧘",
+    "parent_id": "27017832-0a9d-47aa-984d-e5c4a6a3c1e2",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "ffa5ff7a-434a-4811-87bc-7aa05d760f46",
+    "name": "Trade & Maintenance",
+    "slug": "trade",
+    "icon_text": "🔩",
+    "parent_id": "27017832-0a9d-47aa-984d-e5c4a6a3c1e2",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "afb5dec9-03e0-4fc8-8517-44574e10e651",
+    "name": "Technology",
+    "slug": "technology",
+    "icon_text": "🤖",
+    "parent_id": "27017832-0a9d-47aa-984d-e5c4a6a3c1e2",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "bfca9124-a932-4532-bc6b-7ffc87538b59",
+    "name": "Dining & Hospitality",
+    "slug": "dining-hospitality",
+    "icon_text": "🏙️",
+    "parent_id": "79a9626d-6812-4a28-87c3-3f65a9d08ecf",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "5a742634-7567-4687-ad89-56c3408ac9de",
+    "name": "Specialty Retail",
+    "slug": "specialty-retail",
+    "icon_text": "🎁",
+    "parent_id": "5b1d9adc-8d23-4bd1-8439-e6ce12d9cbfd",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "56c2a212-0dd2-443d-b6a9-7e46a0bacdd6",
+    "name": "Home & Lifestyle",
+    "slug": "home-lifestyle",
+    "icon_text": "🏙️",
+    "parent_id": "5b1d9adc-8d23-4bd1-8439-e6ce12d9cbfd",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "5f30d35d-b248-4691-b9d6-2008b6f97be4",
+    "name": "Agri-Business",
+    "slug": "agri-business",
+    "icon_text": "🚜",
+    "parent_id": "fb1f5ff2-a615-4162-ae30-5215b8c076b8",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "a9e53d32-9bc6-46b5-b9ef-bd63cd50521b",
+    "name": "Community",
+    "slug": "community",
+    "icon_text": "🏘️",
+    "parent_id": "2f07e554-b2ba-4c16-942f-be843be7a765",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "8c5dcfe7-eb11-4771-a5d3-796ac08b557a",
+    "name": "Accounting and Tax Services",
+    "slug": "accounting",
+    "icon_text": "📊",
+    "parent_id": "7cd04104-0841-406a-9463-8e818bdea291",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "7d01743d-c288-48a2-bb41-7c5f1b05b175",
+    "name": "Legal Services",
+    "slug": "legal",
+    "icon_text": "⚖️",
+    "parent_id": "7cd04104-0841-406a-9463-8e818bdea291",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "9105d98f-1a34-4b10-afe2-fb2b64ea5028",
+    "name": "Financial Management",
+    "slug": "finance",
+    "icon_text": "🏙️",
+    "parent_id": "7cd04104-0841-406a-9463-8e818bdea291",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "4dd4a68e-c8a0-4d42-8191-3290b63dacec",
+    "name": "Insurance Agencies",
+    "slug": "insurance",
+    "icon_text": "🛡️",
+    "parent_id": "7cd04104-0841-406a-9463-8e818bdea291",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "9cd3eed4-79ad-47ad-9261-66c2583dab85",
+    "name": "Real Estate Agencies",
+    "slug": "real-estate",
+    "icon_text": "🏠",
+    "parent_id": "7cd04104-0841-406a-9463-8e818bdea291",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "e561a6ea-5e64-4ae7-b190-f08d9675c0f2",
+    "name": "Media & Marketing",
+    "slug": "marketing",
+    "icon_text": "🏙️",
+    "parent_id": "7cd04104-0841-406a-9463-8e818bdea291",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "4ffb378a-b6c7-4ecc-8b49-839ea94c5bf8",
+    "name": "Business Development & Consulting",
+    "slug": "consulting",
+    "icon_text": "🤝",
+    "parent_id": "7cd04104-0841-406a-9463-8e818bdea291",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "fcc1bf03-f224-4ff5-8bd5-bf0dd1fe461e",
+    "name": "Health and Wellness",
+    "slug": "health-wellness",
+    "icon_text": "🏙️",
+    "parent_id": "ce48899e-171d-49f4-86f3-29b2eb77866e",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "9f282350-d3d4-49d1-95d2-4f06e7dcfb7b",
+    "name": "Fitness Centers",
+    "slug": "fitness",
+    "icon_text": "🏙️",
+    "parent_id": "ce48899e-171d-49f4-86f3-29b2eb77866e",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "282d3a9a-9ed7-4e67-8d2a-3a8afb0c6387",
+    "name": "Dental Clinics",
+    "slug": "dental",
+    "icon_text": "🦷",
+    "parent_id": "ce48899e-171d-49f4-86f3-29b2eb77866e",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "75903f4e-c5cf-4848-abbd-317f68c5ea77",
+    "name": "Elder Care & Nursing",
+    "slug": "elder-care",
+    "icon_text": "👵",
+    "parent_id": "ce48899e-171d-49f4-86f3-29b2eb77866e",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "274e7c25-d70d-4615-b8c4-15d20304fd3b",
+    "name": "Hospitals & Specialized Clinics",
+    "slug": "hospitals",
+    "icon_text": "🏩",
+    "parent_id": "ce48899e-171d-49f4-86f3-29b2eb77866e",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "ddae8b50-3cf3-416f-92dc-88143de3576b",
+    "name": "Pet Care & Veterinary",
+    "slug": "vet",
+    "icon_text": "🏙️",
+    "parent_id": "ce48899e-171d-49f4-86f3-29b2eb77866e",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "587ad48b-3d02-41b4-8747-ed4405b48120",
+    "name": "Salons & Spas",
+    "slug": "spas",
+    "icon_text": "🧖",
+    "parent_id": "ce48899e-171d-49f4-86f3-29b2eb77866e",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "f6874e62-87e6-4418-b252-399b42fdd024",
+    "name": "Automotive Sales/Repair",
+    "slug": "automotive",
+    "icon_text": "🚗",
+    "parent_id": "ffa5ff7a-434a-4811-87bc-7aa05d760f46",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "0cc2f779-b87e-4c52-b5f1-aa924a648ae7",
+    "name": "Construction & Manufacturing",
+    "slug": "construction",
+    "icon_text": "🏗️",
+    "parent_id": "ffa5ff7a-434a-4811-87bc-7aa05d760f46",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "2a5f9042-4b9d-4635-bcb3-c96356dabf15",
+    "name": "Wholesale Distribution",
+    "slug": "wholesale",
+    "icon_text": "📦",
+    "parent_id": "ffa5ff7a-434a-4811-87bc-7aa05d760f46",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "a7430e13-fe43-47d3-a045-7f893d0796c8",
+    "name": "Energy & Utilities",
+    "slug": "energy",
+    "icon_text": "⚡",
+    "parent_id": "ffa5ff7a-434a-4811-87bc-7aa05d760f46",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "3855df31-fbac-46b5-929e-e1728d4c28fd",
+    "name": "Print and Copy Services",
+    "slug": "print",
+    "icon_text": "🖨️",
+    "parent_id": "ffa5ff7a-434a-4811-87bc-7aa05d760f46",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "cda536d5-4a23-4a75-95c3-354c3fb3b888",
+    "name": "Cleaning & Laundry Services",
+    "slug": "cleaning",
+    "icon_text": "🧹",
+    "parent_id": "ffa5ff7a-434a-4811-87bc-7aa05d760f46",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "87ec64f0-8bab-4a0a-8d87-0f23eb75df23",
+    "name": "Computers & IT",
+    "slug": "it",
+    "icon_text": "💻",
+    "parent_id": "afb5dec9-03e0-4fc8-8517-44574e10e651",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "2235d3fc-bfb7-41fb-b381-a902a6cfa291",
+    "name": "Software & Web Development",
+    "slug": "software",
+    "icon_text": "🖥️",
+    "parent_id": "afb5dec9-03e0-4fc8-8517-44574e10e651",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "a69b986d-8f28-4444-a7bc-06d146a90d89",
+    "name": "Telecommunications",
+    "slug": "telecom",
+    "icon_text": "📡",
+    "parent_id": "afb5dec9-03e0-4fc8-8517-44574e10e651",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "6638885d-d230-4fe4-8114-d114bb7be9fe",
+    "name": "Dining (Full Service)",
+    "slug": "dining-full",
+    "icon_text": "🏙️",
+    "parent_id": "bfca9124-a932-4532-bc6b-7ffc87538b59",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "6d1652c9-052c-4f3e-a711-edd9ff28da60",
+    "name": "Coffee Shops & Roasteries",
+    "slug": "coffee",
+    "icon_text": "☕",
+    "parent_id": "bfca9124-a932-4532-bc6b-7ffc87538b59",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "0f38e4cb-6821-4cd7-878f-2ff7bb01b2eb",
+    "name": "Cocktails & Bars",
+    "slug": "bars",
+    "icon_text": "🍸",
+    "parent_id": "bfca9124-a932-4532-bc6b-7ffc87538b59",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "0323298b-bc99-4f9d-8371-4969f1771d71",
+    "name": "Wineries & Distilleries",
+    "slug": "wineries",
+    "icon_text": "🍷",
+    "parent_id": "bfca9124-a932-4532-bc6b-7ffc87538b59",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "d1d3635e-aabb-45b3-92cb-79bba15c1a08",
+    "name": "Sweets & Bakeries",
+    "slug": "bakeries",
+    "icon_text": "🥐",
+    "parent_id": "bfca9124-a932-4532-bc6b-7ffc87538b59",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "44a6eb22-8a8d-48bf-83a4-c7787da86921",
+    "name": "Catering",
+    "slug": "catering",
+    "icon_text": "🍱",
+    "parent_id": "bfca9124-a932-4532-bc6b-7ffc87538b59",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "4cbc2621-d336-4cae-9a6d-88e6fe593fe4",
+    "name": "Arts, Culture & Entertainment",
+    "slug": "arts-culture",
+    "icon_text": "🎨",
+    "parent_id": "5a742634-7567-4687-ad89-56c3408ac9de",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "bd7d6848-eda0-4e34-918a-e2396d1d55b8",
+    "name": "Galleries",
+    "slug": "galleries",
+    "icon_text": "🖼️",
+    "parent_id": "5a742634-7567-4687-ad89-56c3408ac9de",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "c3650dec-c1d5-44a6-bdab-178afced0d37",
+    "name": "Museums",
+    "slug": "museums",
+    "icon_text": "🏛️",
+    "parent_id": "5a742634-7567-4687-ad89-56c3408ac9de",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "93d7bf73-8630-40a4-965e-21e3a424f7b0",
+    "name": "Bookstores",
+    "slug": "bookstores",
+    "icon_text": "📚",
+    "parent_id": "5a742634-7567-4687-ad89-56c3408ac9de",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "1e13b689-9d84-44a9-b4fa-d5a7dcbbd031",
+    "name": "Theatres",
+    "slug": "theatres",
+    "icon_text": "🎭",
+    "parent_id": "5a742634-7567-4687-ad89-56c3408ac9de",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "b9372d7d-037a-46f8-b02f-e2ec89b14402",
+    "name": "Outdoor Recreation & Gear",
+    "slug": "outdoor",
+    "icon_text": "🛶",
+    "parent_id": "5a742634-7567-4687-ad89-56c3408ac9de",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "97c33a12-1905-447d-9a09-a1a807c08128",
+    "name": "Home Goods",
+    "slug": "home-goods",
+    "icon_text": "🍳",
+    "parent_id": "56c2a212-0dd2-443d-b6a9-7e46a0bacdd6",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "c7c633ff-1d77-4e97-96d6-c48f6fb64aaa",
+    "name": "Antiques & Collectibles",
+    "slug": "antiques",
+    "icon_text": "🏺",
+    "parent_id": "56c2a212-0dd2-443d-b6a9-7e46a0bacdd6",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "2ada8ad8-cc15-46e4-ba1b-1f6aa74512e8",
+    "name": "Boutiques & Fashion",
+    "slug": "fashion",
+    "icon_text": "👗",
+    "parent_id": "56c2a212-0dd2-443d-b6a9-7e46a0bacdd6",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "00a0ccaa-71df-406c-bde6-c73184ab7aba",
+    "name": "Viroqua Public Market Merchants",
+    "slug": "public-market",
+    "icon_text": "🏪",
+    "parent_id": "56c2a212-0dd2-443d-b6a9-7e46a0bacdd6",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "f1a56e10-0e45-44f4-9f29-63ddae5755a6",
+    "name": "Local Food Producers",
+    "slug": "local-food",
+    "icon_text": "🏙️",
+    "parent_id": "5f30d35d-b248-4691-b9d6-2008b6f97be4",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "83f6bf70-bf4a-45f0-bd4f-602245c9c707",
+    "name": "Organic Cooperatives",
+    "slug": "coops",
+    "icon_text": "🏙️",
+    "parent_id": "5f30d35d-b248-4691-b9d6-2008b6f97be4",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "aa514871-49c6-43e7-ab4f-6467fe363eeb",
+    "name": "Farm, Home, and Garden",
+    "slug": "farm-supply",
+    "icon_text": "🏙️",
+    "parent_id": "5f30d35d-b248-4691-b9d6-2008b6f97be4",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "8be46d33-3bbf-4dad-a283-56915eba115e",
+    "name": "Nurseries & Greenhouse",
+    "slug": "greenhouse",
+    "icon_text": "🏙️",
+    "parent_id": "5f30d35d-b248-4691-b9d6-2008b6f97be4",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "d1a5ffce-fcd0-4db8-8be7-f603766d063f",
+    "name": "Non-Profits",
+    "slug": "non-profits",
+    "icon_text": "🎗️",
+    "parent_id": "a9e53d32-9bc6-46b5-b9ef-bd63cd50521b",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "212e90ed-47b3-475e-a94f-21d5d4e2d5a8",
+    "name": "Schools & Colleges",
+    "slug": "schools",
+    "icon_text": "🎓",
+    "parent_id": "a9e53d32-9bc6-46b5-b9ef-bd63cd50521b",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  },
+  {
+    "id": "e111ab4d-58b7-4736-a765-d526a1ce0981",
+    "name": "Family Services",
+    "slug": "family-services",
+    "icon_text": "🏙️",
+    "parent_id": "a9e53d32-9bc6-46b5-b9ef-bd63cd50521b",
+    "created_at": "2026-02-03T05:37:50.188634+00:00"
+  }
+]

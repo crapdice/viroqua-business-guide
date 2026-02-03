@@ -1,0 +1,151 @@
+{
+  "veda_count": 0,
+  "market_count": 4,
+  "chamber_count": 5,
+  "samples": {
+    "market": {
+      "source_id": "VPM-about-the-market",
+      "name": "About the Market",
+      "raw_address": "215 S Main St, Viroqua, WI 54665",
+      "raw_phone": "608-637-2338",
+      "website": "https://www.viroquapublicmarket.com/",
+      "raw_category": "Shopping & Retail",
+      "description": "For almost two decades, we've tried to bring great shopping to the area by working with local vendors of all sorts. From Amish to jewelry makers, candy makers to antique dealers, they've all found a place in our historic building. We've had weddings, festivals, concerts, and plays in the courtyard over the years. We've watched kids grow up and people fall in love. We've greeted visitors from all over the world; locals who still remember the building when it was a car dealership, and scores of folks from around the state. All this, we've done as a family. Our \"extended\" family of multiple business-owners, artists, and restauranteurs who have come and gone from the Main Street Station store fronts are a valuable part of our history. Those still remaining have grown with us in their own right and the Viroqua Public Market holds great promise for future small business owners and entrepreneurs. We've watched the community of Viroqua grow and prosper, ever evolving into a more and more beautiful place to be. Thank you all for your continued support. We hope to serve you for many years to come.",
+      "source_url": "https://www.viroquapublicmarket.com/merchants",
+      "lat": 43.5546,
+      "lng": -90.8894
+    },
+    "chamber_raw": [
+      {
+        "source_id": "https://www.viroquachamber.com/business-directory/217-on-main/",
+        "name": "217 on Main",
+        "raw_address": "217 N Main Street\n\nViroqua, WI",
+        "raw_phone": "608-306-3171",
+        "website": "https://www.217onmain.com/",
+        "raw_category": "Where to Stay",
+        "description": null,
+        "source_url": "https://www.viroquachamber.com/business-directory/217-on-main/"
+      },
+      {
+        "source_id": "https://www.viroquachamber.com/business-directory/abacus/",
+        "name": "abacus",
+        "raw_address": "",
+        "raw_phone": null,
+        "website": null,
+        "raw_category": "Uncategorized",
+        "description": null,
+        "source_url": "https://www.viroquachamber.com/business-directory/abacus/"
+      },
+      {
+        "source_id": "https://www.viroquachamber.com/business-directory/abacus-answers/",
+        "name": "Abacus Answers",
+        "raw_address": "",
+        "raw_phone": "608-638-4246",
+        "website": "https://www.abacusanswers.com/",
+        "raw_category": "Accounting and Tax Services, Services",
+        "description": null,
+        "source_url": "https://www.viroquachamber.com/business-directory/abacus-answers/"
+      },
+      {
+        "source_id": "https://www.viroquachamber.com/business-directory/abviroqua/",
+        "name": "ABViroqua",
+        "raw_address": "",
+        "raw_phone": null,
+        "website": null,
+        "raw_category": "Uncategorized",
+        "description": null,
+        "source_url": "https://www.viroquachamber.com/business-directory/abviroqua/"
+      },
+      {
+        "source_id": "https://www.viroquachamber.com/business-directory/accounting-tax-services/",
+        "name": "Accounting & Tax Service of Viroqua",
+        "raw_address": "767 N Main St\n\nViroqua, WI",
+        "raw_phone": "608-637-6800",
+        "website": "https://www.theacctax.com/",
+        "raw_category": "Accounting and Tax Services, Services",
+        "description": null,
+        "source_url": "https://www.viroquachamber.com/business-directory/accounting-tax-services/"
+      }
+    ],
+    "chamber_clean": [
+      {
+        "name": "217 on Main",
+        "slug": "217-on-main",
+        "category_id": "bfca9124-a932-4532-bc6b-7ffc87538b59",
+        "address": "217 N Main Street\n\nViroqua, WI",
+        "city": "Viroqua",
+        "state": "WI",
+        "zip": "54665",
+        "phone": "(608) 306-3171",
+        "website": "https://www.217onmain.com/",
+        "description": null,
+        "opening_hours": null,
+        "owner_principal": null,
+        "social_links": {},
+        "logo_url": "https://www.217onmain.com/wp-content/uploads/2015/10/logo-sign3.jpg"
+      },
+      {
+        "name": "abacus",
+        "slug": "abacus",
+        "category_id": "7cd04104-0841-406a-9463-8e818bdea291",
+        "address": "",
+        "city": "Viroqua",
+        "state": "WI",
+        "zip": "54665",
+        "phone": null,
+        "website": null,
+        "description": null,
+        "opening_hours": null,
+        "owner_principal": null,
+        "social_links": {}
+      },
+      {
+        "name": "Abacus Answers",
+        "slug": "abacus-answers",
+        "category_id": "7cd04104-0841-406a-9463-8e818bdea291",
+        "address": "",
+        "city": "Viroqua",
+        "state": "WI",
+        "zip": "54665",
+        "phone": "(608) 638-4246",
+        "website": "https://www.abacusanswers.com/",
+        "description": null,
+        "opening_hours": null,
+        "owner_principal": null,
+        "social_links": {},
+        "logo_url": "https://www.abacusanswers.com/wp-content/uploads/2019/12/abacus_logo.png"
+      },
+      {
+        "name": "ABViroqua",
+        "slug": "abviroqua",
+        "category_id": "7cd04104-0841-406a-9463-8e818bdea291",
+        "address": "",
+        "city": "Viroqua",
+        "state": "WI",
+        "zip": "54665",
+        "phone": null,
+        "website": null,
+        "description": null,
+        "opening_hours": null,
+        "owner_principal": null,
+        "social_links": {}
+      },
+      {
+        "name": "Accounting & Tax Service of Viroqua",
+        "slug": "accounting-tax-service-of-viroqua",
+        "category_id": "7cd04104-0841-406a-9463-8e818bdea291",
+        "address": "767 N Main St\n\nViroqua, WI",
+        "city": "Viroqua",
+        "state": "WI",
+        "zip": "54665",
+        "phone": "(608) 637-6800",
+        "website": "https://www.theacctax.com/",
+        "description": null,
+        "opening_hours": null,
+        "owner_principal": null,
+        "social_links": {},
+        "logo_url": "https://www.theacctax.com/favicon.ico"
+      }
+    ]
+  }
+}

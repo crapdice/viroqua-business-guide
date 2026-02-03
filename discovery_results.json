@@ -1,0 +1,136 @@
+{
+  "runTimestamp": "2026-02-03T07:35:50.540Z",
+  "totalDiscovered": 17,
+  "businesses": [
+    {
+      "name": "Wonderstate Coffee - Viroqua",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "302 S Main St",
+      "phone": "(608) 638-7701",
+      "website": "http://wonderstate.com/pages/viroqua-cafe",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Kickapoo Coffee Inc",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "305 Railroad Ave",
+      "phone": "(608) 637-2022",
+      "website": "http://kickapoocoffeeinc.localsearch.com",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Peet's Coffee & Tea",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "1133 N Main St",
+      "phone": "(608) 637-8511",
+      "website": "http://peetscoffeetea483854490.localsearch.com",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Kickapoo Coffee Cafe",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "302 S Main St",
+      "phone": "(608) 638-7701",
+      "website": "http://yellowpages.com/viroqua-wi/mip/wonderstate-coffee-viroqua-556740592",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Dunnums Cafe",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "830 N Main St Ste A",
+      "phone": "(608) 638-6011",
+      "website": "http://yellowpages.com/viroqua-wi/mip/wonderstate-coffee-viroqua-556740592",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Driftless Cafe",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "118 W Court St",
+      "phone": "(608) 637-7778",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Viking Inn Supper Club",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "113 N Main St",
+      "phone": "(608) 637-7398",
+      "website": "http://vikinginnsupperclub.localsearch.com",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Brewdog Coffee",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "210 S Main St",
+      "phone": "(608) 637-6993",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Starbucks Coffee",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "539 South St",
+      "phone": "(608) 654-5236",
+      "website": "http://trinitylutheranchurch.com",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Borgens Cafe",
+      "source": "YellowPages",
+      "sourceUrl": "https://www.yellowpages.com/search?search_terms=Coffee%20Shops&geo_location_terms=Viroqua%20WI",
+      "address": "109 S Main St",
+      "phone": "(608) 634-4003",
+      "website": "http://borgenscafe.com",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "The Driftless Cafe",
+      "source": "GoogleMaps",
+      "sourceUrl": "https://www.google.com/maps/place/The+Driftless+Cafe/data=!4m7!3m6!1s0x87fc3e0a68996511:0xf51e00b1ba88919d!8m2!3d43.5563843!4d-90.8901972!16s%2Fg%2F1tjdxgkz!19sChIJEWWZaAo-_IcRnZGIurEAHvU?authuser=0&hl=en&rclk=1",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Maybe Lately's Food & More",
+      "source": "GoogleMaps",
+      "sourceUrl": "https://www.google.com/maps/place/Maybe+Lately%27s+Food+%26+More/data=!4m7!3m6!1s0x87fc3fdb1ff9283f:0xb2787f1060c0900f!8m2!3d43.5568179!4d-90.8890982!16s%2Fg%2F11p4_tqt4d!19sChIJPyj5H9s__IcRD5DAYBB_eLI?authuser=0&hl=en&rclk=1",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Norwegian Hollow Hideaway",
+      "source": "GoogleMaps",
+      "sourceUrl": "https://www.google.com/maps/place/Norwegian+Hollow+Hideaway/data=!4m7!3m6!1s0x87fc124ad7516d47:0x950dc8b98d195f07!8m2!3d43.5314308!4d-91.0269772!16s%2Fg%2F1vn192l4!19sChIJR21R10oS_IcRB18ZjbnIDZU?authuser=0&hl=en&rclk=1",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Gasser’s Bar & Grill",
+      "source": "GoogleMaps",
+      "sourceUrl": "https://www.google.com/maps/place/Gasser%E2%80%99s+Bar+%26+Grill/data=!4m7!3m6!1s0x87fc3de89a8a6a95:0x99a1695327f83195!8m2!3d43.5673989!4d-90.8897542!16s%2Fg%2F11g6nkq5g6!19sChIJlWqKmug9_IcRlTH4J1NpoZk?authuser=0&hl=en&rclk=1",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "608 Plumbing",
+      "source": "GoogleMaps",
+      "sourceUrl": "https://www.google.com/maps/place/608+Plumbing/data=!4m7!3m6!1s0x87fc3d84713a6fe1:0x7d239a9cb39a1d1!8m2!3d43.576966!4d-90.8899248!16s%2Fg%2F11s_xz0gr_!19sChIJ4W86cYQ9_IcR0aE5y6k50gc?authuser=0&hl=en&rclk=1",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Strang Heating & Electrical",
+      "source": "GoogleMaps",
+      "sourceUrl": "https://www.google.com/maps/place/Strang+Heating+%26+Electrical/data=!4m7!3m6!1s0x87fc3e1282c6e2cd:0x22e8bc8da0079be9!8m2!3d43.5463515!4d-90.8887992!16s%2Fg%2F1tj46gqb!19sChIJzeLGghI-_IcR6ZsHoI286CI?authuser=0&hl=en&rclk=1",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    },
+    {
+      "name": "Brye Plumbing & Electric",
+      "source": "GoogleMaps",
+      "sourceUrl": "https://www.google.com/maps/place/Brye+Plumbing+%26+Electric/data=!4m7!3m6!1s0x87fc17ebfe980f95:0x3081d5c80c5cb568!8m2!3d43.6067139!4d-90.92411!16s%2Fg%2F1tdz0j8t!19sChIJlQ-Y_usX_IcRaLVcDMjVgTA?authuser=0&hl=en&rclk=1",
+      "suggestedCategoryId": "7cd04104-0841-406a-9463-8e818bdea291"
+    }
+  ]
+}

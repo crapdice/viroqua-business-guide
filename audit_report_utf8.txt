@@ -1,0 +1,72 @@
+[
+  {
+    "Business Name": "C&C Landscaping",
+    "Old Address": "E7541 County Rd SS, ",
+    "New Verif. Address": "E7541 County Rd SS, Viroqua, W",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 100
+  },
+  {
+    "Business Name": "Lorr Computer Soluti",
+    "Old Address": "834 N Main St, Suite",
+    "New Verif. Address": "834 N Main St, Suite B, Viroqu",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 100
+  },
+  {
+    "Business Name": "217 on Main",
+    "Old Address": "N/A",
+    "New Verif. Address": "FAILED",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 66
+  },
+  {
+    "Business Name": "Go Macro",
+    "Old Address": "Viroqua, WI",
+    "New Verif. Address": "Viroqua, WI",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 63
+  },
+  {
+    "Business Name": "ABViroqua",
+    "Old Address": "N/A",
+    "New Verif. Address": "FAILED",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 64
+  },
+  {
+    "Business Name": "Westby Cooperative C",
+    "Old Address": "Viroqua, WI",
+    "New Verif. Address": "Viroqua, WI",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 82
+  },
+  {
+    "Business Name": "Proline Printing & S",
+    "Old Address": "223 S Main St, Viroq",
+    "New Verif. Address": "223 South Main Street, Viroqua",
+    "Lat/Lng Status": "✅ 43.5550",
+    "Cat Score": 100
+  },
+  {
+    "Business Name": "Cade Financial Servi",
+    "Old Address": "Viroqua, WI",
+    "New Verif. Address": "Viroqua, WI",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 78
+  },
+  {
+    "Business Name": "Cheese Corner",
+    "Old Address": "Viroqua, WI",
+    "New Verif. Address": "Viroqua, WI",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 68
+  },
+  {
+    "Business Name": "County Seat Laundry",
+    "Old Address": "Viroqua, WI",
+    "New Verif. Address": "Viroqua, WI",
+    "Lat/Lng Status": "❌ NONE",
+    "Cat Score": 74
+  }
+]

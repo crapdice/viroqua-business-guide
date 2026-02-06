@@ -1,14 +1,32 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
+import { ChevronLeft, MapPin, Phone, Mail, Globe, Facebook, Instagram, Landmark } from 'lucide-react';
+import SmartImage from '@/components/SmartImage';
+import { Metadata } from 'next';
 
-export const dynamic = 'force-dynamic';
+// ISR: Revalidate business detail pages every hour (3600 seconds)
+export const revalidate = 3600;
 
-export default async function BusinessDetailPage({ params }: { params: { slug: string } }) {
-    const { slug } = await params;
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const params = await props.params;
+    const { slug } = params;
+    const { data: business } = await supabase
+        .from('businesses')
+        .select('name, description')
+        .eq('slug', slug)
+        .single();
 
-    // Fetch business with its category
+    return {
+        title: `${business?.name || 'Local Business'} | Viroqua, WI | Driftless Guide`,
+        description: business?.description || `Visit ${business?.name} in Viroqua, Wisconsin. Discover local makers and businesses in the Driftless region.`,
+    };
+}
+
+export default async function BusinessDetailPage(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
+    const { slug } = params;
+
     const { data: business, error } = await supabase
         .from('businesses')
         .select('*, categories(name, slug)')
@@ -19,78 +37,105 @@ export default async function BusinessDetailPage({ params }: { params: { slug: s
         return notFound();
     }
 
+    // JSON-LD Structured Data
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: business.name,
+        description: business.description,
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: business.address,
+            addressLocality: business.city || 'Viroqua',
+            addressRegion: business.state || 'WI',
+            postalCode: business.zip,
+        },
+        telephone: business.phone,
+        url: business.website,
+        image: business.hero_image_url,
+    };
+
     return (
-        <div className="min-h-screen bg-white dark:bg-zinc-950">
-            {/* Hero Header */}
-            <div className="relative h-[40vh] min-h-[400px] w-full bg-zinc-900">
-                {business.hero_image_url ? (
-                    <Image
-                        src={business.hero_image_url}
-                        alt={business.name}
-                        fill
-                        className="object-cover opacity-60"
-                        priority
-                    />
-                ) : (
-                    <div className="absolute inset-0 bg-emerald-950/20" />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950  to-transparent" />
+        <div className="min-h-screen bg-[#FDFCFB] text-[#3A332E]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+
+            {/* Heritage Header */}
+            <div className="relative h-[50vh] min-h-[500px] w-full bg-[#EBE3D5]">
+                <SmartImage
+                    src={business.hero_image_url || ''}
+                    alt={business.name}
+                    fill
+                    className="object-cover grayscale-[0.2] sepia-[0.1]"
+                    priority
+                    categorySlug={business.categories?.slug}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FDFCFB] via-transparent to-transparent" />
+
                 <div className="absolute inset-x-0 bottom-0 px-6 pb-12">
                     <div className="mx-auto max-w-7xl">
                         <Link
                             href={`/categories/${business.categories?.slug}`}
-                            className="mb-4 inline-block rounded-full bg-emerald-500/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-400 backdrop-blur-md"
+                            className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#E2E8D4]/90 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#3E5C3D] backdrop-blur-sm shadow-sm"
                         >
                             {business.categories?.name}
                         </Link>
-                        <h1 className="text-4xl font-extrabold text-white sm:text-6xl">
+                        <h1 className="font-serif text-5xl font-bold text-[#2D2825] sm:text-7xl lg:text-8xl leading-tight">
                             {business.name}
                         </h1>
                     </div>
                 </div>
             </div>
 
-            <main className="mx-auto max-w-7xl px-6 py-12">
-                <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-                    {/* Main Info */}
-                    <div className="lg:col-span-2 space-y-8">
+            <main className="mx-auto max-w-7xl px-6 py-16">
+                <div className="grid grid-cols-1 gap-16 lg:grid-cols-3">
+                    {/* Narrative Section */}
+                    <div className="lg:col-span-2 space-y-12">
                         <section>
-                            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">About</h2>
-                            <div className="prose prose-zinc dark:prose-invert max-w-none">
-                                <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-                                    {business.description || 'No description available for this business.'}
+                            <h2 className="font-serif text-3xl font-bold text-[#2D2825] mb-6 flex items-center gap-4">
+                                <span className="h-[1px] w-8 bg-[#3E5C3D]"></span>
+                                Our Story
+                            </h2>
+                            <div className="prose prose-stone max-w-none">
+                                <p className="font-serif text-xl leading-relaxed text-[#6B5E55]">
+                                    {business.description || 'This establishment is a proud thread in the fabric of Viroqua, contributing to the unique character and craftsmanship of the Driftless region.'}
                                 </p>
                             </div>
                         </section>
 
-                        {/* Structured Info / Features */}
-                        <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {/* Could add more structured fields here later */}
+                        <section className="grid grid-cols-1 sm:grid-cols-2 gap-8 opacity-50 italic font-serif text-[#6B5E55]">
+                            <p>"Viroqua is not just a place on a map, but a community of makers and growers."</p>
                         </section>
                     </div>
 
-                    {/* Sidebar Info */}
-                    <aside className="space-y-6">
-                        <div className="rounded-3xl bg-zinc-50 p-8 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                            <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-50 mb-6 font-mono uppercase tracking-widest text-xs opacity-50">Contact info</h3>
+                    {/* Registry Info (Sidebar) */}
+                    <aside className="space-y-8">
+                        <div className="rounded-[2.5rem] bg-[#FAF9F6] p-10 border border-[#EBE3D5] shadow-sm">
+                            <h3 className="mb-10 font-sans text-xs font-black uppercase tracking-[0.25em] text-[#9A8F85]">Registry Records</h3>
 
-                            <div className="space-y-6">
+                            <div className="space-y-8">
                                 {business.address && (
                                     <div className="flex items-start gap-4">
-                                        <span className="text-xl">📍</span>
+                                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E2E8D4] text-[#3E5C3D]">
+                                            <MapPin size={18} />
+                                        </div>
                                         <div>
-                                            <p className="font-semibold text-zinc-900 dark:text-zinc-50">Address</p>
-                                            <p className="text-zinc-600 dark:text-zinc-400">{business.address}</p>
+                                            <p className="text-[10px] font-black uppercase tracking-widest text-[#9A8F85] mb-1">Establishment Address</p>
+                                            <p className="font-serif text-lg text-[#2D2825]">{business.address}</p>
                                         </div>
                                     </div>
                                 )}
 
                                 {business.phone && (
                                     <div className="flex items-start gap-4">
-                                        <span className="text-xl">📞</span>
+                                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E2E8D4] text-[#3E5C3D]">
+                                            <Phone size={18} />
+                                        </div>
                                         <div>
-                                            <p className="font-semibold text-zinc-900 dark:text-zinc-50">Phone</p>
-                                            <a href={`tel:${business.phone}`} className="text-emerald-600 hover:underline">
+                                            <p className="text-[10px] font-black uppercase tracking-widest text-[#9A8F85] mb-1">Voice Registry</p>
+                                            <a href={`tel:${business.phone}`} className="font-serif text-lg text-[#3E5C3D] hover:underline decoration-thickness-2">
                                                 {business.phone}
                                             </a>
                                         </div>
@@ -99,10 +144,12 @@ export default async function BusinessDetailPage({ params }: { params: { slug: s
 
                                 {business.email && (
                                     <div className="flex items-start gap-4">
-                                        <span className="text-xl">✉️</span>
+                                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E2E8D4] text-[#3E5C3D]">
+                                            <Mail size={18} />
+                                        </div>
                                         <div>
-                                            <p className="font-semibold text-zinc-900 dark:text-zinc-50">Email</p>
-                                            <a href={`mailto:${business.email}`} className="text-emerald-600 hover:underline">
+                                            <p className="text-[10px] font-black uppercase tracking-widest text-[#9A8F85] mb-1">Direct Correspondence</p>
+                                            <a href={`mailto:${business.email}`} className="font-serif text-lg text-[#3E5C3D] hover:underline decoration-thickness-2">
                                                 {business.email}
                                             </a>
                                         </div>
@@ -110,44 +157,54 @@ export default async function BusinessDetailPage({ params }: { params: { slug: s
                                 )}
 
                                 {business.website && (
-                                    <div className="mt-8">
+                                    <div className="mt-12 pt-8 border-t border-[#EBE3D5]">
                                         <a
                                             href={business.website}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="block w-full rounded-2xl bg-emerald-600 py-4 text-center font-bold text-white shadow-lg transition-transform hover:-translate-y-0.5"
+                                            className="group flex items-center justify-center gap-3 w-full rounded-2xl bg-[#3E5C3D] py-5 text-center font-bold text-white shadow-lg transition-all hover:bg-[#2D2825]"
                                         >
-                                            Visit Website
+                                            <Globe size={18} />
+                                            Visit Digital Catalog
                                         </a>
                                     </div>
                                 )}
 
-                                {/* Social Links */}
-                                <div className="flex items-center gap-4 mt-4">
-                                    {business.facebook_url && (
-                                        <a href={business.facebook_url} target="_blank" rel="noopener noreferrer" className="text-2xl hover:scale-110 transition-transform">
-                                            📘
-                                        </a>
-                                    )}
-                                    {business.instagram_url && (
-                                        <a href={business.instagram_url} target="_blank" rel="noopener noreferrer" className="text-2xl hover:scale-110 transition-transform">
-                                            📸
-                                        </a>
-                                    )}
-                                </div>
+                                {/* Social Connection */}
+                                {(business.facebook_url || business.instagram_url) && (
+                                    <div className="flex items-center justify-center gap-6 mt-6">
+                                        {business.facebook_url && (
+                                            <a href={business.facebook_url} target="_blank" rel="noopener noreferrer" className="text-[#9A8F85] hover:text-[#3E5C3D] transition-colors">
+                                                <Facebook size={24} strokeWidth={1.5} />
+                                            </a>
+                                        )}
+                                        {business.instagram_url && (
+                                            <a href={business.instagram_url} target="_blank" rel="noopener noreferrer" className="text-[#9A8F85] hover:text-[#3E5C3D] transition-colors">
+                                                <Instagram size={24} strokeWidth={1.5} />
+                                            </a>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </div>
 
-                        {/* Hours Section (if available) */}
+                        {/* Hours / Chronometry */}
                         {business.opening_hours && (
-                            <div className="rounded-3xl bg-zinc-900 p-8 text-white">
-                                <h3 className="text-xs font-mono uppercase tracking-widest opacity-50 mb-6">Opening Hours</h3>
-                                <pre className="text-sm font-sans whitespace-pre-wrap opacity-80">
-                                    {JSON.stringify(business.opening_hours, null, 2)}
-                                </pre>
+                            <div className="rounded-[2.5rem] bg-[#3E5C3D] p-10 text-white shadow-xl">
+                                <h3 className="text-[10px] font-black uppercase tracking-[0.25em] opacity-60 mb-8 font-sans">Business Hours</h3>
+                                <div className="space-y-4 font-serif text-lg opacity-90">
+                                    {/* Simplified view of JSON hours if needed */}
+                                    <p>{typeof business.opening_hours === 'string' ? business.opening_hours : 'Open for the community during standard hours.'}</p>
+                                </div>
                             </div>
                         )}
                     </aside>
+                </div>
+
+                <div className="mt-20 pt-12 border-t border-[#EBE3D5]">
+                    <Link href="/" className="font-serif italic text-[#3E5C3D] hover:text-[#2D2825] transition-colors">
+                        ← Return to the Driftless Guide
+                    </Link>
                 </div>
             </main>
         </div>

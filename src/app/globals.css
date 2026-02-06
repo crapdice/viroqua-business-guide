@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FDFCFB;
+  /* Warm Parchment */
+  --foreground: #3A332E;
+  /* Earthy Walnut */
+  --sage: #3E5C3D;
+  --moss: #E2E8D4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-terracotta: var(--terracotta);
+  --color-limestone: var(--limestone);
+
+  --font-serif: var(--font-serif), ui-serif, Georgia, serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui;
+  --font-editorial: var(--font-serif);
+
+  --spacing-128: 32rem;
+  --animate-float: float 6s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Subtle Grainy Texture Overlay */
+  background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+  font-family: var(--font-sans), ui-sans-serif, system-ui;
+  -webkit-font-smoothing: antialiased;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Almanac Shadow Utility */
+.almanac-shadow {
+  box-shadow: 0 10px 40px -15px rgba(62, 92, 61, 0.1);
+}
+
+.paper-shadow {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px -8px rgba(0,0,0,0.08);
+}
+
+.topographic-bg {
+  background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

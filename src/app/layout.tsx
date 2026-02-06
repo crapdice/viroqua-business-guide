@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lora, Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const lora = Lora({
+  variable: "--font-serif",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
@@ -26,16 +26,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-zinc-50 dark:bg-zinc-950`}
+        className={`${lora.variable} ${inter.variable} antialiased min-h-screen bg-[#FDFCFB] text-[#3A332E] selection:bg-[#E2E8D4]`}
       >
-        <nav className="fixed top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <Link href="/" className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-              Viroqua<span className="text-emerald-600">Guide</span>
+        <nav className="fixed top-0 z-50 w-full border-b border-[#EBE3D5] bg-[#FDFCFB]/90 backdrop-blur-md">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+            <Link href="/" className="font-serif text-2xl font-bold tracking-tight text-[#2D2825]">
+              Viroqua<span className="text-[#3E5C3D]">Guide</span>
             </Link>
-            <div className="flex items-center gap-6">
-              <Link href="/" className="text-sm font-medium text-zinc-600 hover:text-emerald-600 dark:text-zinc-400">
-                Home
+            <div className="flex items-center gap-8">
+              <Link href="/" className="font-sans text-sm font-semibold tracking-wide uppercase text-[#6B5E55] hover:text-[#3E5C3D] transition-colors">
+                Explore
+              </Link>
+              <Link href="/trails" className="font-sans text-sm font-semibold tracking-wide uppercase text-[#6B5E55] hover:text-[#3E5C3D] transition-colors">
+                Trails
+              </Link>
+              <Link href="/pulse" className="font-sans text-sm font-semibold tracking-wide uppercase text-[#6B5E55] hover:text-[#3E5C3D] transition-colors">
+                Pulse
               </Link>
             </div>
           </div>

@@ -7,26 +7,41 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "scrape": "tsx src/scraper/index.ts"
+    "scrape": "tsx src/scraper/index.ts",
+    "enrich": "tsx src/scraper/enrich.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.93.3",
-    "dotenv": "^17.2.3",
-    "libphonenumber-js": "^1.12.36",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.30.0",
+    "lucide-react": "^0.563.0",
     "next": "16.1.6",
-    "playwright": "^1.58.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-plock": "^3.6.1",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5.1.3",
+    "axios": "^1.13.4",
+    "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "jsdom": "^28.0.0",
+    "libphonenumber-js": "^1.12.36",
+    "playwright": "^1.58.1",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.18"
   }
 }

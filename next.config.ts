@@ -78,6 +78,24 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: '**.revize.com',
+      },
+      // Allow any .com domain for business logos/images
+      {
+        protocol: 'https',
+        hostname: '**.com',
+      },
+      {
+        protocol: 'http',
+        hostname: '**.com',
+      },
+      // Also allow .net, .org for broader coverage
+      {
+        protocol: 'https',
+        hostname: '**.net',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.org',
       }
     ],
   },

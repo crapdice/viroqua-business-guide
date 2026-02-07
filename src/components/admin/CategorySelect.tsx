@@ -60,11 +60,19 @@ export function CategorySelect({ categories, value, onChange, placeholder = 'Sel
 
     return (
         <div ref={containerRef} className="relative">
-            {/* Trigger Button */}
-            <button
-                type="button"
+            {/* Trigger */}
+            <div
+                role="combobox"
+                aria-expanded={isOpen}
+                tabIndex={0}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`w-full px-4 py-3 border rounded-xl text-left flex items-center justify-between transition-colors ${isOpen ? 'border-[#3E5C3D] ring-1 ring-[#3E5C3D]/20' : 'border-[#EBE3D5]'
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setIsOpen(!isOpen);
+                    }
+                }}
+                className={`w-full px-4 py-3 border rounded-xl text-left flex items-center justify-between transition-colors cursor-pointer ${isOpen ? 'border-[#3E5C3D] ring-1 ring-[#3E5C3D]/20' : 'border-[#EBE3D5]'
                     } bg-white hover:border-[#3E5C3D]/50`}
             >
                 <span className={selectedCategory ? 'text-[#2D2825]' : 'text-[#9A8F85]'}>
@@ -72,20 +80,27 @@ export function CategorySelect({ categories, value, onChange, placeholder = 'Sel
                 </span>
                 <div className="flex items-center gap-2">
                     {value && (
-                        <button
-                            type="button"
+                        <span
+                            role="button"
+                            tabIndex={0}
                             onClick={handleClear}
-                            className="p-1 hover:bg-[#E2E8D4] rounded transition-colors"
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    handleClear(e as unknown as React.MouseEvent);
+                                }
+                            }}
+                            className="p-1 hover:bg-[#E2E8D4] rounded transition-colors cursor-pointer"
                         >
                             <X size={14} className="text-[#9A8F85]" />
-                        </button>
+                        </span>
                     )}
                     <ChevronDown
                         size={18}
                         className={`text-[#9A8F85] transition-transform ${isOpen ? 'rotate-180' : ''}`}
                     />
                 </div>
-            </button>
+            </div>
 
             {/* Dropdown */}
             {isOpen && (

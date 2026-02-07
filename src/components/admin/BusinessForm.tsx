@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, Save, Loader2 } from 'lucide-react';
 import { ImageUpload } from '@/components/admin/ImageUpload';
 import { UrlImport } from '@/components/admin/UrlImport';
+import { CategorySelect } from '@/components/admin/CategorySelect';
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
@@ -233,16 +234,11 @@ export function BusinessForm({ business, categories }: BusinessFormProps) {
 
                         <div>
                             <label className="block text-sm font-medium text-[#2D2825] mb-2">Category</label>
-                            <select
+                            <CategorySelect
+                                categories={categories}
                                 value={formData.category_id}
-                                onChange={(e) => setFormData(prev => ({ ...prev, category_id: e.target.value }))}
-                                className="w-full px-4 py-3 border border-[#EBE3D5] rounded-xl focus:outline-none focus:border-[#3E5C3D]"
-                            >
-                                <option value="">Select a category...</option>
-                                {categories.map(c => (
-                                    <option key={c.id} value={c.id}>{c.name}</option>
-                                ))}
-                            </select>
+                                onChange={(categoryId) => setFormData(prev => ({ ...prev, category_id: categoryId }))}
+                            />
                         </div>
                     </div>
 

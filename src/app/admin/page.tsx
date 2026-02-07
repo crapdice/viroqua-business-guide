@@ -1,19 +1,70 @@
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
-import { FolderTree, Store, MapPin, ArrowRight } from 'lucide-react';
+import { FolderTree, Store, MapPin, ArrowRight, AlertTriangle, ExternalLink } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
+
+// Required fields for a complete business listing (fields shown to users)
+const REQUIRED_FIELDS = ['name', 'description', 'address', 'phone', 'category_id'] as const;
+
+interface IncompleteBusiness {
+    id: string;
+    name: string;
+    slug: string;
+    missingFields: string[];
+}
+
+function getIncompleteListings(businesses: any[]): IncompleteBusiness[] {
+    const incomplete: IncompleteBusiness[] = [];
+
+    for (const biz of businesses) {
+        const missingFields: string[] = [];
+
+        for (const field of REQUIRED_FIELDS) {
+            const value = biz[field];
+            if (!value || (typeof value === 'string' && value.trim() === '')) {
+                missingFields.push(field);
+            }
+        }
+
+        if (missingFields.length > 0) {
+            incomplete.push({
+                id: biz.id,
+                name: biz.name || 'Unnamed Business',
+                slug: biz.slug,
+                missingFields
+            });
+        }
+    }
+
+    return incomplete;
+}
+
+function formatFieldName(field: string): string {
+    const names: Record<string, string> = {
+        name: 'Name',
+        description: 'Description',
+        address: 'Address',
+        phone: 'Phone',
+        category_id: 'Category',
+    };
+    return names[field] || field;
+}
 
 export default async function AdminDashboard() {
     const [
         { count: categoryCount },
         { count: businessCount },
-        { count: trailCount }
+        { count: trailCount },
+        { data: allBusinesses }
     ] = await Promise.all([
         supabase.from('categories').select('*', { count: 'exact', head: true }),
         supabase.from('businesses').select('*', { count: 'exact', head: true }),
         supabase.from('trails').select('*', { count: 'exact', head: true }),
+        supabase.from('businesses').select('id, name, slug, description, address, phone, category_id').eq('is_active', true),
     ]);
+
+    const incompleteListings = getIncompleteListings(allBusinesses || []);
 
     const stats = [
         { label: 'Categories', count: categoryCount || 0, href: '/admin/categories', icon: FolderTree, color: 'bg-blue-500' },
@@ -27,6 +78,51 @@ export default async function AdminDashboard() {
                 <h1 className="font-serif text-4xl font-bold text-[#2D2825]">Dashboard</h1>
                 <p className="mt-2 text-[#6B5E55]">Manage your Viroqua Business Guide content</p>
             </div>
+
+            {/* Incomplete Listings Alert */}
+            {incompleteListings.length > 0 && (
+                <div className="mb-8 bg-amber-50 border border-amber-200 rounded-2xl p-6">
+                    <div className="flex items-start gap-4">
+                        <div className="bg-amber-500 text-white p-2 rounded-xl">
+                            <AlertTriangle size={20} />
+                        </div>
+                        <div className="flex-1">
+                            <h2 className="font-medium text-amber-900 mb-1">
+                                {incompleteListings.length} Incomplete Listing{incompleteListings.length !== 1 ? 's' : ''}
+                            </h2>
+                            <p className="text-sm text-amber-700 mb-4">
+                                These active businesses are missing required information that displays to users.
+                            </p>
+                            <div className="space-y-2 max-h-48 overflow-y-auto">
+                                {incompleteListings.slice(0, 10).map((biz) => (
+                                    <div
+                                        key={biz.id}
+                                        className="flex items-center justify-between bg-white rounded-lg px-4 py-2.5 border border-amber-100"
+                                    >
+                                        <div>
+                                            <span className="font-medium text-[#2D2825]">{biz.name}</span>
+                                            <span className="text-xs text-amber-600 ml-2">
+                                                Missing: {biz.missingFields.map(formatFieldName).join(', ')}
+                                            </span>
+                                        </div>
+                                        <Link
+                                            href={`/admin/businesses/${biz.id}`}
+                                            className="text-amber-600 hover:text-amber-800 p-1"
+                                        >
+                                            <ExternalLink size={16} />
+                                        </Link>
+                                    </div>
+                                ))}
+                            </div>
+                            {incompleteListings.length > 10 && (
+                                <p className="text-xs text-amber-600 mt-2">
+                                    + {incompleteListings.length - 10} more incomplete listings
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 {stats.map((stat) => {
@@ -79,3 +175,4 @@ export default async function AdminDashboard() {
         </div>
     );
 }
+

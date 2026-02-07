@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Save, Loader2 } from 'lucide-react';
 import { ImageUpload } from '@/components/admin/ImageUpload';
+import { UrlImport } from '@/components/admin/UrlImport';
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
@@ -71,6 +72,40 @@ export function BusinessForm({ business, categories }: BusinessFormProps) {
             ...prev,
             name,
             slug: business ? prev.slug : generateSlug(name),
+        }));
+    };
+
+    const handleUrlImport = (data: {
+        name: string | null;
+        description: string | null;
+        address: string | null;
+        city: string | null;
+        state: string | null;
+        zip: string | null;
+        phone: string | null;
+        email: string | null;
+        website: string;
+        hero_image_url: string | null;
+        instagram_url: string | null;
+        facebook_url: string | null;
+        suggested_category_id: string | null;
+    }) => {
+        setFormData(prev => ({
+            ...prev,
+            name: data.name || prev.name,
+            slug: data.name ? generateSlug(data.name) : prev.slug,
+            description: data.description || prev.description,
+            address: data.address || prev.address,
+            city: data.city || prev.city,
+            state: data.state || prev.state,
+            zip: data.zip || prev.zip,
+            phone: data.phone || prev.phone,
+            email: data.email || prev.email,
+            website: data.website || prev.website,
+            hero_image_url: data.hero_image_url || prev.hero_image_url,
+            instagram_url: data.instagram_url || prev.instagram_url,
+            facebook_url: data.facebook_url || prev.facebook_url,
+            category_id: data.suggested_category_id || prev.category_id,
         }));
     };
 
@@ -141,6 +176,13 @@ export function BusinessForm({ business, categories }: BusinessFormProps) {
             {error && (
                 <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
                     {error}
+                </div>
+            )}
+
+            {/* URL Import - only show for new businesses */}
+            {!business && (
+                <div className="mb-8">
+                    <UrlImport onImport={handleUrlImport} />
                 </div>
             )}
 

@@ -1,0 +1,1 @@
+UPDATE businesses SET hero_image_url = 'https://cms2.revize.com/revize/viroqua/_assets_/images/logo.png' WHERE id = '67083eb6-d222-4e08-b1bc-86f296f0cc92';

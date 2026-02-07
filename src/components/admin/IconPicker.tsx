@@ -12,7 +12,7 @@ const CATEGORY_ICONS = [
     'Hammer', 'Wrench', 'HardHat', 'Zap', 'Droplet', 'Thermometer',
     'Heart', 'Activity', 'Stethoscope', 'Pill', 'Brain', 'Dumbbell', 'Bike',
     'Scissors', 'Sparkles', 'Brush', 'Smile',
-    'Car', 'Truck', 'Fuel', 'Wrench',
+    'Car', 'Truck', 'Fuel', 'Cog',
     'Book', 'GraduationCap', 'Lightbulb', 'Landmark',
     'Home', 'Building2', 'Building', 'Store', 'Warehouse',
     'Leaf', 'Trees', 'Flower2', 'Sprout', 'Apple',

@@ -74,6 +74,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: '**.squarespace-cdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.revize.com',
       }
     ],
   },

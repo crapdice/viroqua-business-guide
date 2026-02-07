@@ -14,7 +14,12 @@ export default function SmartImage({ src, alt, categorySlug, className, ...props
     // Default to HelpCircle if slug is missing, or use specific category icon
     const Icon = getCategoryIcon(categorySlug || 'default');
 
-    if (error || !src) {
+    // Normalize protocol-relative URLs (//...) to absolute URLs (https://...)
+    const normalizedSrc = typeof src === 'string' && src.startsWith('//')
+        ? `https:${src}`
+        : src;
+
+    if (error || !normalizedSrc) {
         return (
             <div className={`flex items-center justify-center bg-[#F4F1EA] text-[#9A8F85] ${className}`}>
                 <Icon size={48} strokeWidth={0.5} />
@@ -24,7 +29,7 @@ export default function SmartImage({ src, alt, categorySlug, className, ...props
 
     return (
         <Image
-            src={src}
+            src={normalizedSrc}
             alt={alt}
             className={className}
             onError={() => setError(true)}

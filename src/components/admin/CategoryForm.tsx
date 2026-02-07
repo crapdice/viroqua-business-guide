@@ -58,32 +58,46 @@ export function CategoryForm({ category, allCategories }: CategoryFormProps) {
         setError(null);
 
         try {
+            if (!formData.name.trim()) {
+                throw new Error('Category name is required');
+            }
+            if (!formData.slug.trim()) {
+                throw new Error('Slug is required');
+            }
+
             const payload = {
-                name: formData.name,
-                slug: formData.slug,
-                description: formData.description || null,
+                name: formData.name.trim(),
+                slug: formData.slug.trim(),
+                description: formData.description?.trim() || null,
                 icon_text: formData.icon_text || null,
                 parent_id: formData.parent_id || null,
             };
 
+            let result;
             if (category) {
-                const { error } = await supabase
+                result = await supabase
                     .from('categories')
                     .update(payload)
                     .eq('id', category.id);
-                if (error) throw error;
             } else {
-                const { error } = await supabase
+                result = await supabase
                     .from('categories')
                     .insert(payload);
-                if (error) throw error;
+            }
+
+            if (result.error) {
+                if (result.error.code === '23505') {
+                    throw new Error('A category with this slug already exists.');
+                }
+                throw result.error;
             }
 
             router.push('/admin/categories');
             router.refresh();
         } catch (err: any) {
             console.error('Save error:', err);
-            setError(err.message || 'Failed to save category');
+            const errorMessage = err?.message || err?.details || 'Failed to save category. Please try again.';
+            setError(errorMessage);
         } finally {
             setIsSubmitting(false);
         }

@@ -115,43 +115,59 @@ export function BusinessForm({ business, categories }: BusinessFormProps) {
         setError(null);
 
         try {
+            // Validate required fields
+            if (!formData.name.trim()) {
+                throw new Error('Business name is required');
+            }
+            if (!formData.slug.trim()) {
+                throw new Error('Slug is required');
+            }
+
             const payload = {
-                name: formData.name,
-                slug: formData.slug,
-                description: formData.description || null,
-                address: formData.address || null,
-                city: formData.city || null,
-                state: formData.state || null,
-                zip: formData.zip || null,
-                phone: formData.phone || null,
-                email: formData.email || null,
-                website: formData.website || null,
-                hero_image_url: formData.hero_image_url || null,
-                logo_url: formData.logo_url || null,
+                name: formData.name.trim(),
+                slug: formData.slug.trim(),
+                description: formData.description?.trim() || null,
+                address: formData.address?.trim() || null,
+                city: formData.city?.trim() || null,
+                state: formData.state?.trim() || null,
+                zip: formData.zip?.trim() || null,
+                phone: formData.phone?.trim() || null,
+                email: formData.email?.trim() || null,
+                website: formData.website?.trim() || null,
+                hero_image_url: formData.hero_image_url?.trim() || null,
+                logo_url: formData.logo_url?.trim() || null,
                 category_id: formData.category_id || null,
                 is_active: formData.is_active,
-                instagram_url: formData.instagram_url || null,
-                facebook_url: formData.facebook_url || null,
+                instagram_url: formData.instagram_url?.trim() || null,
+                facebook_url: formData.facebook_url?.trim() || null,
             };
 
+            let result;
             if (business) {
-                const { error } = await supabase
+                result = await supabase
                     .from('businesses')
                     .update(payload)
                     .eq('id', business.id);
-                if (error) throw error;
             } else {
-                const { error } = await supabase
+                result = await supabase
                     .from('businesses')
                     .insert(payload);
-                if (error) throw error;
+            }
+
+            if (result.error) {
+                // Handle specific error types
+                if (result.error.code === '23505') {
+                    throw new Error('A business with this slug already exists. Please choose a different name or manually edit the slug.');
+                }
+                throw result.error;
             }
 
             router.push('/admin/businesses');
             router.refresh();
         } catch (err: any) {
             console.error('Save error:', err);
-            setError(err.message || 'Failed to save business');
+            const errorMessage = err?.message || err?.details || 'Failed to save business. Please try again.';
+            setError(errorMessage);
         } finally {
             setIsSubmitting(false);
         }

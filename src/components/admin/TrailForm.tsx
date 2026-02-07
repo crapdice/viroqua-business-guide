@@ -92,31 +92,48 @@ export function TrailForm({ trail, stops: initialStops = [], businesses }: Trail
         setError(null);
 
         try {
+            if (!formData.name.trim()) {
+                throw new Error('Trail name is required');
+            }
+            if (!formData.slug.trim()) {
+                throw new Error('Slug is required');
+            }
+
             const payload = {
-                name: formData.name,
-                slug: formData.slug,
-                description: formData.description || null,
-                cover_image_url: formData.cover_image_url || null,
-                duration_estimate: formData.duration_estimate || null,
+                name: formData.name.trim(),
+                slug: formData.slug.trim(),
+                description: formData.description?.trim() || null,
+                cover_image_url: formData.cover_image_url?.trim() || null,
+                duration_estimate: formData.duration_estimate?.trim() || null,
                 difficulty: formData.difficulty || null,
             };
 
             let trailId = trail?.id;
 
             if (trail) {
-                const { error } = await supabase
+                const result = await supabase
                     .from('trails')
                     .update(payload)
                     .eq('id', trail.id);
-                if (error) throw error;
+                if (result.error) {
+                    if (result.error.code === '23505') {
+                        throw new Error('A trail with this slug already exists.');
+                    }
+                    throw result.error;
+                }
             } else {
-                const { data, error } = await supabase
+                const result = await supabase
                     .from('trails')
                     .insert(payload)
                     .select('id')
                     .single();
-                if (error) throw error;
-                trailId = data.id;
+                if (result.error) {
+                    if (result.error.code === '23505') {
+                        throw new Error('A trail with this slug already exists.');
+                    }
+                    throw result.error;
+                }
+                trailId = result.data.id;
             }
 
             // Handle stops
@@ -144,7 +161,8 @@ export function TrailForm({ trail, stops: initialStops = [], businesses }: Trail
             router.refresh();
         } catch (err: any) {
             console.error('Save error:', err);
-            setError(err.message || 'Failed to save trail');
+            const errorMessage = err?.message || err?.details || 'Failed to save trail. Please try again.';
+            setError(errorMessage);
         } finally {
             setIsSubmitting(false);
         }

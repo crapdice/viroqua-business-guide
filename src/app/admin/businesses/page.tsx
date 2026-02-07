@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
+import { normalizeImageUrl } from '@/lib/utils';
 import { Plus, Pencil, ExternalLink } from 'lucide-react';
 import { DeleteButton } from '@/components/admin/DeleteButton';
 
@@ -50,9 +51,9 @@ export default async function BusinessesPage() {
                                 <td className="px-6 py-4">
                                     <div className="flex items-center gap-3">
                                         <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-[#FAF9F6] border border-[#EBE3D5]">
-                                            {business.hero_image_url ? (
+                                            {normalizeImageUrl(business.hero_image_url) ? (
                                                 <Image
-                                                    src={business.hero_image_url}
+                                                    src={normalizeImageUrl(business.hero_image_url)!}
                                                     alt={business.name}
                                                     fill
                                                     className="object-cover"
